@@ -32,6 +32,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 # Front-end gems
 gem 'simple_form', github: 'heartcombo/simple_form'
+gem "autoprefixer-rails", "10.2.5"
+gem "font-awesome-sass", "~> 5.6.1"
 
 # Cloudinary and Cloudinary key
 gem 'dotenv-rails', groups: [:development, :test]

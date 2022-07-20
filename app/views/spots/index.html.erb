@@ -1,29 +1,27 @@
 <p id="notice"><%= notice %></p>
 
+<div class="home-banner">
+  <div class="overlay">
+    <h1>Drink Spot</h1>
+    <h3>
+    <span data-controller="typed-js"></span>
+    </h3>
+  </div>
+</div>
+
 <h1>Drink Spots</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @spots.each do |spot| %>
-      <tr>
-        <td><%= spot.title %></td>
-        <td><%= spot.body %></td>
-        <td><%= link_to 'Show', spot %></td>
-        <td><%= link_to 'Edit', edit_spot_path(spot) %></td>
-        <td><%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<% @spots.each do |spot| %>
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2><%= spot.title %></h2>
+    <p><%= spot.body %></p>
+    <%= link_to 'View', spot %>
+    <%= link_to 'Edit', edit_spot_path(spot) %>
+    <%= link_to 'Delete', spot, method: :delete, data: { confirm: 'Are you sure you want to delete this?' } %>
+  </div>
+</div>
+<% end %>
 
 <%= link_to 'New Spot', new_spot_path %>
